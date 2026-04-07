@@ -21,8 +21,20 @@
 
     <!-- ── Modules: add one entry per plugin/feature in this repo ── -->
     <modules>
-        <module>../MY_PLUGIN</module>
-        <module>../MY_PLUGIN.feature</module>
+        <module>../gama.plugin.hydro.hecras</module>
+        <module>../gama.plugin.hydro.mike</module>
+        <module>../gama.plugin.feature.hydro</module>
+        <module>../gama.plugin.launchpad</module>
+        <module>../gama.plugin.feature.launchpad</module>
+        <module>../gama.plugin.markdown</module>
+        <module>../gama.plugin.feature.markdown</module>
+        <module>../gama.plugin.rjava</module>
+        <module>../gama.plugin.feature.rjava</module>
+        <module>../gama.plugin.uml</module>
+        <module>../gama.plugin.feature.uml</module>
+        <module>../gama.plugin.gampy</module>
+        <module>../gama.plugin.feature.gampy</module>
+        
         <module>../gama.plugin.p2updatesite</module>
     </modules>
 

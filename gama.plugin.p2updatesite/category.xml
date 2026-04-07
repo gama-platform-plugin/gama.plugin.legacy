@@ -12,8 +12,34 @@
             gama.optional.formats      - New file format support (IFC, NetCDF, CIM...)
             gama.optional.ia           - Artificial intelligence components
     -->
-    <feature url="features/gama.plugin.feature.MY_PLUGIN_1.0.0.qualifier.jar"
-             id="gama.plugin.feature.MY_PLUGIN"
+    <feature url="features/gama.plugin.feature.hydro_2025.6.0.qualifier.jar"
+             id="gama.plugin.feature.hydro"
+             version="2025.6.0.qualifier">
+        <category name="gama.optional"/>
+    </feature>
+    <feature url="features/gama.plugin.feature.markdown_2025.6.0.qualifier.jar"
+             id="gama.plugin.feature.markdown"
+             version="2025.6.0.qualifier">
+        <category name="gama.optional"/>
+    </feature>
+    <feature url="features/gama.plugin.feature.rjava_2025.6.0.qualifier.jar"
+             id="gama.plugin.feature.rjava"
+             version="2025.6.0.qualifier">
+        <category name="gama.optional"/>
+    </feature>
+    <feature url="features/gama.plugin.feature.uml_2025.6.0.qualifier.jar"
+             id="gama.plugin.feature.uml"
+             version="2025.6.0.qualifier">
+        <category name="gama.optional"/>
+    </feature>
+
+    <feature url="features/gama.plugin.feature.gampy_1.0.0.qualifier.jar"
+             id="gama.plugin.feature.gampy"
+             version="1.0.0.qualifier">
+        <category name="gama.optional"/>
+    </feature>
+    <feature url="features/gama.plugin.feature.launchpad_1.0.0.qualifier.jar"
+             id="gama.plugin.feature.launchpad"
              version="1.0.0.qualifier">
         <category name="gama.optional"/>
     </feature>
