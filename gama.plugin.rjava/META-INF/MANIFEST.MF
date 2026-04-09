@@ -3,11 +3,12 @@ Bundle-ManifestVersion: 2
 Bundle-Name: RJava extension
 Bundle-SymbolicName: gama.plugin.rjava;singleton:=true
 Bundle-Vendor: UMMISCO
-Bundle-Version: 2025.6.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Version: 2026.6.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-25
 Require-Bundle: gama.core;visibility:=reexport,
  gama.dependencies;visibility:=reexport,
- gama.extension.image;visibility:=reexport
+ gama.extension.image;visibility:=reexport,gama.annotations,
+ gama.processor,gama.api
 Bundle-ActivationPolicy: lazy
 Export-Package: gama.plugin.rjava,
  org.rosuda.JRI,

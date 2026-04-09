@@ -2,11 +2,11 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: hecras extension
 Bundle-SymbolicName: gama.plugin.hydro.hecras;singleton:=true
-Bundle-Version: 2025.6.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Version: 2026.6.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-25
 Require-Bundle: gama.annotations;bundle-version="0.0.0",
  gama.dependencies;bundle-version="0.0.0",
- gama.core;bundle-version="0.0.0"
+ gama.core;bundle-version="0.0.0",gama.processor,gama.api
 Bundle-ActivationPolicy: lazy
 Export-Package: com.sun.jna,
  com.sun.jna.internal,

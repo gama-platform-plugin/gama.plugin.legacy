@@ -2,10 +2,11 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: mike extension
 Bundle-SymbolicName: gama.plugin.hydro.mike;singleton:=true
-Bundle-Version: 2025.6.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-21
+Bundle-Version: 2026.6.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-25
 Require-Bundle: gama.core;bundle-version="0.0.0",
- gama.dependencies;bundle-version="0.0.0"
+ gama.dependencies;bundle-version="0.0.0",gama.annotations,
+ gama.processor,gama.api
 Bundle-ActivationPolicy: lazy
 Export-Package: java_.io,
  java_.lang,
