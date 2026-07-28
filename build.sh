@@ -13,11 +13,23 @@ else
     exit 1
 fi
 
+# The signing keystore and SCP credentials are only set up for deploy runs (see
+# build.yml). On compile-only runs, skip jarsigner and don't activate the p2Repo
+# profile (which is what triggers the SCP upload of gama.plugin.p2updatesite) so
+# CI doesn't fail trying to sign/upload with credentials that were never imported.
+JARSIGNER_SKIP="true"
+DEPLOY_PROFILE=()
+if [[ "${IS_DEPLOY:-false}" == "true" ]]; then
+    JARSIGNER_SKIP="false"
+    DEPLOY_PROFILE=(-P p2Repo)
+fi
+
 cd "${ROOT}/gama.plugin.parent"
 mvn clean install -B -e \
     -Dgama.p2.version="${GAMA_P2_VERSION}" \
     -Ddeploy.subdir="${PLUGIN_REPO_NAME}" \
     -Dtycho.p2.transport.min-cache-minutes=0 \
     -Dtycho.equinox.resolver.uses=true \
-    -P p2Repo \
+    -Djarsigner.skip="${JARSIGNER_SKIP}" \
+    "${DEPLOY_PROFILE[@]}" \
     --settings ../settings.xml
