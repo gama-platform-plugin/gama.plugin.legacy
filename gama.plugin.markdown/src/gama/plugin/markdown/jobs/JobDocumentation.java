@@ -28,7 +28,7 @@ import gama.ui.navigator.view.contents.WrappedFolder;
 import gama.ui.navigator.view.contents.WrappedGamaFile;
 import gama.ui.navigator.view.contents.WrappedProject;
 import gama.ui.navigator.view.contents.WrappedResource;
-import gaml.compiler.gaml.indexer.GamlResourceIndexer;
+import gaml.compiler.indexer.GamlResourceIndexer;
 
 /**
  *

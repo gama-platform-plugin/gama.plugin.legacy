@@ -2,11 +2,11 @@ package gama.plugin.markdown.visitors;
 
 import java.util.Map;
 
-import gama.gaml.descriptions.IDescription.IFacetVisitor;
+import gama.api.compilation.descriptions.IDescription.IFacetVisitor;
 import gama.plugin.markdown.markdownSyntactic.IParser;
 import gama.plugin.markdown.markdownSyntactic.MarkdownTools;
-import gama.gaml.descriptions.IExpressionDescription;
-import gama.gaml.types.Types;
+import gama.api.gaml.expressions.IExpressionDescription;
+import gama.api.gaml.types.Types;
 
 /**
  *

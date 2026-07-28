@@ -5,9 +5,9 @@ import java.util.Map;
 
 import gama.plugin.markdown.markdownSyntactic.IParser;
 import gama.plugin.markdown.markdownSyntactic.MarkdownTools;
-import gama.gaml.compilation.ast.ISyntacticElement;
-import gama.gaml.compilation.ast.ISyntacticElement.SyntacticVisitor;
-import gama.gaml.types.Types;
+import gama.api.compilation.ast.ISyntacticElement;
+import gama.api.compilation.ast.ISyntacticElement.SyntacticVisitor;
+import gama.api.gaml.types.Types;
 
 /**
  * 

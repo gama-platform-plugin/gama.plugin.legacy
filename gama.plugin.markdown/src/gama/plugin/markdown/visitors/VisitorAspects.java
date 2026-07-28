@@ -3,8 +3,8 @@ package gama.plugin.markdown.visitors;
 
 import gama.plugin.markdown.markdownSyntactic.IParser;
 import gama.plugin.markdown.markdownSyntactic.MarkdownTools;
-import gama.gaml.compilation.ast.ISyntacticElement;
-import gama.gaml.compilation.ast.ISyntacticElement.SyntacticVisitor;
+import gama.api.compilation.ast.ISyntacticElement;
+import gama.api.compilation.ast.ISyntacticElement.SyntacticVisitor;
 
 
 /**

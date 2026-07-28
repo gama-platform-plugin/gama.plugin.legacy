@@ -15,11 +15,11 @@ import org.eclipse.emf.common.util.URI;
 import gama.plugin.markdown.visitors.VisitorExperiments;
 import gama.plugin.markdown.visitors.VisitorModel;
 import gama.plugin.markdown.visitors.VisitorSpecies;
-import gama.gaml.compilation.GAML;
-import gama.gaml.compilation.ast.ISyntacticElement;
-import gama.gaml.compilation.ast.ISyntacticElement.SyntacticVisitor;
+import gama.api.gaml.GAML;
+import gama.api.compilation.ast.ISyntacticElement;
+import gama.api.compilation.ast.ISyntacticElement.SyntacticVisitor;
 import gama.ui.navigator.view.contents.WrappedGamaFile;
-import gaml.compiler.gaml.indexer.GamlResourceIndexer;
+import gaml.compiler.indexer.GamlResourceIndexer;
 
 /**
  *

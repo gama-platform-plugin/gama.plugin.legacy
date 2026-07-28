@@ -19,7 +19,7 @@ import gama.plugin.markdown.markdownSyntactic.LightModel;
 import gama.plugin.markdown.markdownSyntactic.MarkdownModelDocumentor;
 import gama.ui.navigator.view.contents.ResourceManager;
 import gama.ui.navigator.view.contents.WrappedGamaFile;
-import gaml.compiler.gaml.indexer.GamlResourceIndexer;
+import gaml.compiler.indexer.GamlResourceIndexer;
 /**
  * 
  * @author damienphilippon
