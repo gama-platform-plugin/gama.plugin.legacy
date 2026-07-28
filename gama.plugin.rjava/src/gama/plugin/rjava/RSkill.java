@@ -28,29 +28,29 @@ import org.rosuda.JRI.RMainLoopCallbacks;
 import org.rosuda.JRI.RVector;
 import org.rosuda.JRI.Rengine;
 
-import gama.core.metamodel.agent.IAgent;
-import gama.core.metamodel.shape.GamaPoint;
-import gama.core.metamodel.shape.GamaShape;
-import gama.annotations.precompiler.GamlAnnotations.action;
-import gama.annotations.precompiler.GamlAnnotations.arg;
-import gama.annotations.precompiler.GamlAnnotations.doc;
-import gama.annotations.precompiler.GamlAnnotations.example;
-import gama.annotations.precompiler.GamlAnnotations.operator;
-import gama.annotations.precompiler.GamlAnnotations.skill;
-import gama.annotations.precompiler.IConcept;
-import gama.annotations.precompiler.IOperatorCategory;
-import gama.annotations.precompiler.ITypeProvider;
-import gama.core.runtime.GAMA;
-import gama.core.runtime.IScope;
-import gama.core.runtime.exceptions.GamaRuntimeException;
-import gama.core.util.GamaColor;
-import gama.core.util.GamaListFactory;
-import gama.core.util.IList;
+import gama.api.kernel.agent.IAgent;
+import gama.api.types.geometry.GamaPoint;
+import gama.core.geometry.GamaShape;
+import gama.annotations.action;
+import gama.annotations.arg;
+import gama.annotations.doc;
+import gama.annotations.example;
+import gama.annotations.operator;
+import gama.annotations.skill;
+import gama.annotations.support.IConcept;
+import gama.annotations.support.IOperatorCategory;
+import gama.annotations.support.ITypeProvider;
+import gama.api.GAMA;
+import gama.api.runtime.scope.IScope;
+import gama.api.exceptions.GamaRuntimeException;
+import gama.api.types.color.IColor;
+import gama.api.types.list.GamaListFactory;
+import gama.api.types.list.IList;
 import gama.extension.image.GamaImageFile;
-import gama.gaml.skills.Skill;
-import gama.gaml.species.ISpecies;
-import gama.gaml.types.IType;
-import gama.gaml.types.Types;
+import gama.api.kernel.skill.Skill;
+import gama.api.kernel.species.ISpecies;
+import gama.api.gaml.types.IType;
+import gama.api.gaml.types.Types;
 
 /**
  * The Class RSkill.
@@ -368,7 +368,7 @@ public class RSkill extends Skill {
 		Object res = "\"" + o.toString() + "\"";
 		if (o instanceof Integer || o instanceof Double) { res = o.toString(); }
 		if (o instanceof Boolean) { res = (Boolean) o ? "TRUE" : "FALSE"; }
-		if (o instanceof GamaColor) { res = "\"" + ((GamaColor) o).stringValue(null) + "\""; }
+		if (o instanceof IColor) { res = "\"" + ((IColor) o).stringValue(null) + "\""; }
 		if (o instanceof GamaImageFile) { res = "\"" + ((GamaImageFile) o).getPath(null) + "\""; }
 
 		// if(o instanceof IAgent) {
@@ -380,7 +380,7 @@ public class RSkill extends Skill {
 		if (o instanceof GamaPoint) { res = "\"" + ((GamaPoint) o).x + "," + ((GamaPoint) o).y + "\""; }
 
 		if (o instanceof GamaShape) {
-			res = "\"" + ((GamaShape) o).getLocation().x + "," + ((GamaShape) o).getLocation().y + "\"";
+			res = "\"" + ((GamaShape) o).getLocation().getX() + "," + ((GamaShape) o).getLocation().getY() + "\"";
 		}
 
 		if (o instanceof IList) {
