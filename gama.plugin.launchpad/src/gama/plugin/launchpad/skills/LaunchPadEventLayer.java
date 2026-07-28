@@ -15,19 +15,21 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-import gama.core.common.interfaces.IDisplaySurface;
-import gama.core.common.interfaces.IEventLayerDelegate;
-import gama.core.common.interfaces.IGraphics;
-import gama.core.common.interfaces.ILayer;
-import gama.core.metamodel.agent.IAgent;
+import gama.api.ui.displays.IDisplaySurface;
+import gama.api.additions.delegates.IEventLayerDelegate;
+import gama.api.ui.displays.IGraphics;
+import gama.api.ui.layers.ILayer;
+import gama.api.kernel.agent.IAgent;
 import gama.core.outputs.layers.EventLayerStatement;
-import gama.core.outputs.layers.ILayerData;
-import gama.core.outputs.layers.ILayerStatement;
+import gama.api.ui.layers.ILayerData;
+import gama.api.ui.layers.ILayerStatement;
 import gama.core.outputs.layers.LayerData;
-import gama.core.runtime.IScope;
-import gama.core.runtime.IScope.IGraphicsScope;
-import gama.core.runtime.exceptions.GamaRuntimeException;
-import gama.gaml.statements.IExecutable;
+import gama.api.types.list.GamaListFactory;
+import gama.api.types.list.IList;
+import gama.api.runtime.scope.IScope;
+import gama.api.ui.displays.IGraphicsScope;
+import gama.api.exceptions.GamaRuntimeException;
+import gama.api.runtime.IExecutable;
 import net.thecodersbreakfast.lp4j.api.BackBufferOperation;
 import net.thecodersbreakfast.lp4j.api.Button;
 import net.thecodersbreakfast.lp4j.api.Color;
@@ -218,10 +220,10 @@ public class LaunchPadEventLayer implements ILayer, IEventLayerDelegate {
 	}
 
 	@Override
-	public boolean createFrom(final IScope scope, final Object source, final EventLayerStatement statement) {
+	public boolean createFrom(final IScope scope, final Object source, final ILayerStatement.Event statement) {
 		// TODO Auto-generated method stub
 		executionScope = scope;
-		System.out.println("LAUNCHPAD event layer delegate " + statement.getFacetValue(scope, "action"));
+		System.out.println("LAUNCHPAD event layer delegate " + statement.getFacetValue(scope, "action", null));
 		if (!launch) {
 			definition = statement;
 			firstLaunchOn(null);
@@ -233,6 +235,11 @@ public class LaunchPadEventLayer implements ILayer, IEventLayerDelegate {
 	public Set<String> getEvents() {
 		// TODO Auto-generated method stub
 		return EVENTS;
+	}
+
+	@Override
+	public IList<? extends IAgent> getAgentsForMenu(final IScope scope) {
+		return GamaListFactory.getEmptyList();
 	}
 
 }

@@ -1,21 +1,22 @@
 package gama.plugin.launchpad.skills;
 
-import gama.core.metamodel.shape.GamaPoint;
-import gama.annotations.precompiler.GamlAnnotations.action;
-import gama.annotations.precompiler.GamlAnnotations.arg;
-import gama.annotations.precompiler.GamlAnnotations.doc;
-import gama.annotations.precompiler.GamlAnnotations.example;
-import gama.annotations.precompiler.GamlAnnotations.getter;
-import gama.annotations.precompiler.GamlAnnotations.skill;
-import gama.annotations.precompiler.GamlAnnotations.variable;
-import gama.annotations.precompiler.GamlAnnotations.vars;
-import gama.annotations.precompiler.IConcept;
-import gama.core.runtime.GAMA;
-import gama.core.runtime.IScope;
-import gama.core.runtime.exceptions.GamaRuntimeException;
-import gama.core.util.IList;
-import gama.gaml.skills.Skill;
-import gama.gaml.types.IType;
+import gama.api.types.geometry.GamaPointFactory;
+import gama.api.types.geometry.IPoint;
+import gama.annotations.action;
+import gama.annotations.arg;
+import gama.annotations.doc;
+import gama.annotations.example;
+import gama.annotations.getter;
+import gama.annotations.skill;
+import gama.annotations.variable;
+import gama.annotations.vars;
+import gama.annotations.support.IConcept;
+import gama.api.GAMA;
+import gama.api.runtime.scope.IScope;
+import gama.api.exceptions.GamaRuntimeException;
+import gama.api.types.list.IList;
+import gama.api.kernel.skill.Skill;
+import gama.api.gaml.types.IType;
 import net.thecodersbreakfast.lp4j.api.BackBufferOperation;
 import net.thecodersbreakfast.lp4j.api.Button;
 import net.thecodersbreakfast.lp4j.api.Color;
@@ -47,9 +48,8 @@ public class LaunchPadSkill extends Skill {
 	}
 
 	@getter ("padPressed")
-	public GamaPoint getPadPressed() {
-		final GamaPoint p = new GamaPoint(LaunchPadEventLayer.pressedPad.getX(), LaunchPadEventLayer.pressedPad.getY());
-		return p;
+	public IPoint getPadPressed() {
+		return GamaPointFactory.create(LaunchPadEventLayer.pressedPad.getX(), LaunchPadEventLayer.pressedPad.getY());
 	}
 
 	@action (
