@@ -26,6 +26,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.lang.reflect.Array;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
@@ -48,9 +50,14 @@ import com.sun.jna.platform.win32.WinDef.LONG;
 import com.sun.jna.platform.win32.COM.COMException;
 import com.sun.jna.platform.win32.COM.COMLateBindingObject;
 
-import gama.annotations.precompiler.doc.utils.XMLUtils;
-
 public class HecRasEngine extends COMLateBindingObject {
+
+	private static Document createDoc(final String xml) throws Exception {
+		final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		final DocumentBuilder builder = factory.newDocumentBuilder();
+		return builder.parse(new File(xml));
+	}
+
 	public static void main(String args[]) {
 		Ole32.INSTANCE.CoInitializeEx(Pointer.NULL, Ole32.COINIT_MULTITHREADED);
 		HecRasEngine p = new HecRasEngine();
@@ -94,7 +101,7 @@ public class HecRasEngine extends COMLateBindingObject {
 		File docFile = new File(filePath);
 
 		try {
-			Document document = XMLUtils.createDoc(docFile.getAbsolutePath());
+			Document document = createDoc(docFile.getAbsolutePath());
 			final NodeList Layers = document.getElementsByTagName("Results").item(0).getChildNodes();
 			for (int j = 0; j < Layers.getLength(); j++) {
 				if (Layers.item(j) instanceof org.w3c.dom.Element) {

@@ -9,16 +9,16 @@ import org.apache.commons.lang3.ArrayUtils;
 import com.sun.jna.Pointer;
 import com.sun.jna.platform.win32.Ole32;
 
-import gama.annotations.precompiler.GamlAnnotations.action;
-import gama.annotations.precompiler.GamlAnnotations.arg;
-import gama.annotations.precompiler.GamlAnnotations.doc;
-import gama.annotations.precompiler.GamlAnnotations.example;
-import gama.annotations.precompiler.GamlAnnotations.skill;
-import gama.annotations.precompiler.IConcept;
-import gama.core.runtime.IScope;
-import gama.core.runtime.exceptions.GamaRuntimeException;
-import gama.gaml.skills.Skill;
-import gama.gaml.types.IType;
+import gama.annotations.action;
+import gama.annotations.arg;
+import gama.annotations.doc;
+import gama.annotations.example;
+import gama.annotations.skill;
+import gama.annotations.support.IConcept;
+import gama.api.runtime.scope.IScope;
+import gama.api.exceptions.GamaRuntimeException;
+import gama.api.kernel.skill.Skill;
+import gama.api.gaml.types.IType;
 import io.jhdf.HdfFile;
 import io.jhdf.api.Dataset;
 
