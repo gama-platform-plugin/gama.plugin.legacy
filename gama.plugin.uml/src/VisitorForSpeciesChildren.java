@@ -1,8 +1,8 @@
 import java.util.HashMap;
 
-import gama.gaml.compilation.ast.ISyntacticElement;
-import gama.gaml.compilation.ast.ISyntacticElement.SyntacticVisitor;
-import gama.gaml.types.Types;
+import gama.api.compilation.ast.ISyntacticElement;
+import gama.api.compilation.ast.ISyntacticElement.SyntacticVisitor;
+import gama.api.gaml.types.Types;
 
 public class VisitorForSpeciesChildren implements SyntacticVisitor{
 
